@@ -5,20 +5,20 @@ A schema for defining serialization formats.
 
 The schema consists of 7 fixed-size types, 3 variable-sized types and two kinds of user defined types:
 
-Schema   | Description
-------   | -----------
-`bool`   | a boolean, either false or true
-`int8`   | 8bit signed twos complement integer
-`int16`  | 16bit signed twos complement integer
-`int32`  | 32bit signed twos complement integer
-`int64`  | 64bit signed twos complement integer
-`float32`| single precision floating point number
-`float64`| double precision floating point number
-`string` | utf8 variable-length string
-`T?`     | zero or one element of type `T` (aka **nullable** or **optional**)
-`T*`     | zero or more elements of type `T` (aka **array** or **list**)
-*struct* | a user-defined record type, possibly generic (aka **product type**)
-*union*  | a user-defined tagged union type, possibly generic (aka **sum type**)
+Schema     | Description
+------     | -----------
+`bool`     | a boolean, either false or true
+`int8`     | 8bit signed twos complement integer
+`int16`    | 16bit signed twos complement integer
+`int32`    | 32bit signed twos complement integer
+`int64`    | 64bit signed twos complement integer
+`float32`  | single precision floating point number
+`float64`  | double precision floating point number
+`string`   | utf8 variable-length string
+`option<T>`| zero or one element of type `T` (aka **nullable**)
+`array<T>` | zero or more elements of type `T` (aka **optional**)
+*struct*   | a user-defined record type, possibly generic (aka **product type**)
+*union*    | a user-defined tagged union type, possibly generic (aka **sum type**)
 
 The syntax for the schema is concise but C-like. Here's how you could define a person:
 
@@ -32,7 +32,7 @@ A team might contain a list of members:
 
     struct Team {
         Name : string
-        Members : Person*
+        Members : list<Person>
     }
     
 The alignment of a widget may be one of three values, like an enum:
