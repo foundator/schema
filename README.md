@@ -25,7 +25,7 @@ The syntax for the schema is concise but C-like. Here's how you could define a p
     struct Person {
         Age : int32
         Name : string
-        Email : string
+        Email : option<string>
     }
     
 A team might contain a list of members:
