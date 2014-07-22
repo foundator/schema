@@ -16,7 +16,7 @@ Schema     | Description
 `float64`  | double precision floating point number
 `string`   | utf8 variable-length string
 `option<T>`| zero or one element of type `T` (aka **nullable**)
-`array<T>` | zero or more elements of type `T` (aka **optional**)
+`array<T>` | zero or more elements of type `T` (aka **list**)
 *struct*   | a user-defined record type, possibly generic (aka **product type**)
 *union*    | a user-defined tagged union type, possibly generic (aka **sum type**)
 
