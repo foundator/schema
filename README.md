@@ -7,6 +7,7 @@ The schema consists of 6 fixed-size types, 3 variable-sized types and two kinds 
 
 Schema   | Description
 ------   | -----------
+`bool`   | a boolean, either false or true
 `int8`   | 8bit signed twos complement integer
 `int16`  | 16bit signed twos complement integer
 `int32`  | 32bit signed twos complement integer
@@ -34,7 +35,7 @@ A team might contain a list of members:
         Members : Person*
     }
     
-The alignment of a widget may be one of three values:
+The alignment of a widget may be one of three values, like an enum:
 
     union Alignment {
         Top
