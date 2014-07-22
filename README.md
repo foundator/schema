@@ -20,6 +20,8 @@ Schema     | Description
 *struct*   | a user-defined record type, possibly generic (aka **product type**)
 *union*    | a user-defined tagged union type, possibly generic (aka **sum type**)
 
+While we only *need* the last entry in this table, the rest of the types are added to make it easier to understand how the types map to the various programming languages and serialization formats.
+
 The syntax for the schema is concise but C-like. Here's how you could define a person:
 
     struct Person {
