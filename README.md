@@ -32,7 +32,7 @@ A team might contain a list of members:
 
     struct Team {
         Name : string
-        Members : list<Person>
+        Members : array<Person>
     }
     
 The alignment of a widget may be one of three values, like an enum:
