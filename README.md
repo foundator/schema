@@ -61,3 +61,20 @@ A binary tree might as well be generic:
     }
     
 The compiler enforces that built-in types and keywords are lowercase, while user-defined types start with an upper-case letter.
+
+There is a binary format and a JSON format.
+
+    {
+        "schema": "http://example.com/schema/1.1",
+        "type": ["Tree", ["Team"]],
+        "value": ["Leaf", {
+            "Name": "Mojos"
+            "Members": [
+                {
+                    "Age": 21,
+                    "Name": "Johanna"
+                }
+            ]
+        }]
+    }
+    
