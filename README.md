@@ -18,12 +18,14 @@ Schema     | Description
 `float64`  | double precision floating point number
 `string`   | utf8 variable-length string
 `binary`   | zero or more raw bytes of binary data
-`array<T>` | zero or more elements of type `T` (aka **list**)
-`option<T>`| zero or one element of type `T` (aka **nullable**)
+`T*`       | zero or more elements of type `T` (aka **list** or **array**)
+`T?`       | zero or one element of type `T` (aka **nullable** or **optional**)
 *struct*   | a user-defined record type, possibly generic (aka **product type**)
 *enum*     | a user-defined tagged union type, possibly generic (aka **sum type**)
 
 While we only *need* the last entry in this table, the rest of the types are added to make it easier to understand how the types map to the various programming languages and serialization formats.
+
+The `*` and `?` modifiers can be combined to make an optional list of elements, but the modifiers can only appear at top-level in a type. This makes them map better to languages that have limited type systems. To nest these modifiers, an intermediate *struct* or *enum* is required.
 
 The syntax for the schema is concise but C-like. Here's how you could define a person:
 
