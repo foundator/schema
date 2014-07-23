@@ -1,6 +1,8 @@
 schema
 ======
 
+**This is a WIP design document**
+
 A schema for defining serialization formats.
 
 The schema consists of 7 fixed-size types, 3 variable-sized types and two kinds of user defined types:
