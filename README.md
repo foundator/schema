@@ -20,7 +20,7 @@ Schema     | Description
 `option<T>`| zero or one element of type `T` (aka **nullable**)
 `array<T>` | zero or more elements of type `T` (aka **list**)
 *struct*   | a user-defined record type, possibly generic (aka **product type**)
-*union*    | a user-defined tagged union type, possibly generic (aka **sum type**)
+*enum*     | a user-defined tagged union type, possibly generic (aka **sum type**)
 
 While we only *need* the last entry in this table, the rest of the types are added to make it easier to understand how the types map to the various programming languages and serialization formats.
 
@@ -41,7 +41,7 @@ A team might contain a list of members:
     
 The alignment of a widget may be one of three values, like an enum:
 
-    union Alignment {
+    enum Alignment {
         Top
         Middle
         Bottom
@@ -49,7 +49,7 @@ The alignment of a widget may be one of three values, like an enum:
     
 The syntax tree for a small language may need values attached to each tag:
 
-    union Expression {
+    enum Expression {
         Constant(Value : int32)
         Add(X : Expression, Y : Expression)
         Multiply(X : Expression, Y : Expression)
@@ -57,7 +57,7 @@ The syntax tree for a small language may need values attached to each tag:
 
 A binary tree might as well be generic:
 
-    union Tree<T> {
+    enum Tree<T> {
         Leaf(Value : T)
         Branch(Left : Tree<T>, Right : Tree<T>)
     }
