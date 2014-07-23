@@ -26,57 +26,69 @@ While we only *need* the last entry in this table, the rest of the types are add
 
 The syntax for the schema is concise but C-like. Here's how you could define a person:
 
-    struct Person {
-        Age : int32
-        Name : string
-        Email : option<string>
-    }
-    
+```c
+struct Person {
+    Age : int32
+    Name : string
+    Email : option<string>
+}
+```
+
 A team might contain a list of members:
 
-    struct Team {
-        Name : string
-        Members : array<Person>
-    }
-    
+```c
+struct Team {
+    Name : string
+    Members : array<Person>
+}
+```
+
 The alignment of a widget may be one of three values, like an enum:
 
-    enum Alignment {
-        Top
-        Middle
-        Bottom
-    }
+```c
+enum Alignment {
+    Top
+    Middle
+    Bottom
+}
+```
     
 The syntax tree for a small language may need values attached to each tag:
 
-    enum Expression {
-        Constant(Value : int32)
-        Add(X : Expression, Y : Expression)
-        Multiply(X : Expression, Y : Expression)
-    }
+```c
+enum Expression {
+    Constant(Value : int32)
+    Add(X : Expression, Y : Expression)
+    Multiply(X : Expression, Y : Expression)
+}
+```
 
 A binary tree might as well be generic:
 
-    enum Tree<T> {
-        Leaf(Value : T)
-        Branch(Left : Tree<T>, Right : Tree<T>)
-    }
+```c
+enum Tree<T> {
+    Leaf(Value : T)
+    Branch(Left : Tree<T>, Right : Tree<T>)
+}
+```
     
 The compiler enforces that built-in types and keywords are lowercase, while user-defined types start with an upper-case letter.
 
 There is a binary format and a JSON format.
 
-    {
-        "schema": "http://example.com/schema/1.1",
-        "type": "Tree<Team>",
-        "value": ["Leaf", {
-            "Name": "Mojos",
-            "Members": [
-                {
-                    "Age": 21,
-                    "Name": "Johanna"
-                }
-            ]
-        }]
-    }
+```c
+{
+    "schema": "http://example.com/schema/1.1",
+    "type": "Tree<Team>",
+    "value": ["Leaf", {
+        "Name": "Mojos",
+        "Members": [
+            {
+                "Age": 21,
+                "Name": "Johanna"
+            }
+        ]
+    }]
+}
+```
     
