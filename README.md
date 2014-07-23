@@ -18,8 +18,8 @@ Schema     | Description
 `float64`  | double precision floating point number
 `string`   | utf8 variable-length string
 `binary`   | zero or more raw bytes of binary data
-`option<T>`| zero or one element of type `T` (aka **nullable**)
 `array<T>` | zero or more elements of type `T` (aka **list**)
+`option<T>`| zero or one element of type `T` (aka **nullable**)
 *struct*   | a user-defined record type, possibly generic (aka **product type**)
 *enum*     | a user-defined tagged union type, possibly generic (aka **sum type**)
 
