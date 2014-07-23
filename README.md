@@ -17,6 +17,7 @@ Schema     | Description
 `float32`  | single precision floating point number
 `float64`  | double precision floating point number
 `string`   | utf8 variable-length string
+`binary`   | zero or more raw bytes of binary data
 `option<T>`| zero or one element of type `T` (aka **nullable**)
 `array<T>` | zero or more elements of type `T` (aka **list**)
 *struct*   | a user-defined record type, possibly generic (aka **product type**)
