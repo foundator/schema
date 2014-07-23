@@ -33,7 +33,7 @@ The syntax for the schema is concise but C-like. Here's how you could define a p
 struct Person {
     Age : int32
     Name : string
-    Email : option<string>
+    Email : string?
 }
 ```
 
@@ -42,7 +42,7 @@ A team might contain a list of members:
 ```c
 struct Team {
     Name : string
-    Members : array<Person>
+    Members : Person*
 }
 ```
 
