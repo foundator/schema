@@ -66,9 +66,9 @@ There is a binary format and a JSON format.
 
     {
         "schema": "http://example.com/schema/1.1",
-        "type": ["Tree", ["Team"]],
+        "type": "Tree<Team>",
         "value": ["Leaf", {
-            "Name": "Mojos"
+            "Name": "Mojos",
             "Members": [
                 {
                     "Age": 21,
